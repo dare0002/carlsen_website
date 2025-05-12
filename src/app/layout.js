@@ -42,12 +42,14 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="da">
       <body
         className={`${OpenSansRegular.variable} ${OpenSansSemiBold.variable} ${OpenSansBold.variable} ${Poppins.variable} ${Lora.variable} antialiased`}
       >
         <Header/>
-        {children}
+        <div className="px-4 md:px-8 max-w-4xl mx-auto">
+          {children}
+        </div>
         <Footer/>
       </body>
     </html>
