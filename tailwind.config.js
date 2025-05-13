@@ -25,7 +25,8 @@ module.exports = {
         'xl': 'clamp(1.26rem, 1.0868rem + 0.8658vw, 1.7578rem)',
         '2xl': 'clamp(1.512rem, 1.2736rem + 1.1918vw, 2.1973rem)', 
         '3xl': 'clamp(1.8144rem, 1.4902rem + 1.6212vw, 2.7466rem)', 
-        '4xl':'clamp(2.1773rem, -1.7094rem + 19.4333vw, 13.3514rem)', 
+        '4xl': 'clamp(2.5rem, 5vw, 6rem)'
+        // '4xl':'clamp(2.1773rem, -1.7094rem + 19.4333vw, 13.3514rem)', 
       }
     },
   },

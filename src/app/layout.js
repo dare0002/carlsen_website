@@ -3,6 +3,7 @@ import Head from "next/head";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Hero from "@/components/HeroIndex";
 
 const OpenSansRegular = localFont({
   src: "./fonts/OpenSansCondensed-Regular.woff", 
@@ -47,9 +48,10 @@ export default function RootLayout({ children }) {
         className={`${OpenSansRegular.variable} ${OpenSansSemiBold.variable} ${OpenSansBold.variable} ${Poppins.variable} ${Lora.variable} antialiased`}
       >
         <Header/>
-        <div className="px-4 md:px-8 max-w-4xl mx-auto">
+        <Hero/>
+        <main className="px-4 md:px-8 max-w-4xl mx-auto">
           {children}
-        </div>
+        </main>
         <Footer/>
       </body>
     </html>
