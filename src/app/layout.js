@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/HeroIndex";
+import Newsletter from "@/components/Newsletter";
 
 const OpenSansRegular = localFont({
   src: "./fonts/OpenSansCondensed-Regular.woff", 
@@ -52,6 +53,7 @@ export default function RootLayout({ children }) {
         <main className="px-4 md:px-8 max-w-4xl mx-auto">
           {children}
         </main>
+        <Newsletter/>
         <Footer/>
       </body>
     </html>
