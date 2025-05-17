@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Categories = () => {
     return (
-        <div className="">
+        <div id="materiale">
             <div className="mb-8 text-center space-y-2">
             <h2 className="text-lg md:text-xl font-bold mb-2">Find det rette materiale</h2>
             <p>Er du underviser, pædagog eller bibliotekar?</p>

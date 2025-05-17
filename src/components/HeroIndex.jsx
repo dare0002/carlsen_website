@@ -1,6 +1,16 @@
+"use client";
+
 import Image from "next/image";
+import Button from "./Button";
 
 const Hero = () => {
+    const handleScroll = () => {
+        const section = document.getElementById("materiale");
+        if (section) {
+            section.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <div className="bg-lightgreen text-green w-full py-16 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-8">
@@ -14,6 +24,7 @@ const Hero = () => {
                     <h3 className="text-2xl italic md:text-2xl font-semibold">Ekstra</h3>
                     <p className="text-base md:text-lg font-semibold mb-2">Gratis undervisningsmateriale </p>
                     <p className="text-base md:text-lg font-semibold mb-2">fra Danmarks største børnebogsforlag </p>
+                    < Button onClick={handleScroll}>Find materiale nu</Button>
                 </div>
 
                 <img
