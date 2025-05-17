@@ -17,7 +17,7 @@ function Newsletter () {
     const [showForm, setShowForm] = useState(false);
 
     return (
-        <div className="bg-green py-10 mt-10">
+        <div id="newsletter" className="bg-green py-10 mt-10">
         <form action={formAction} noValidate  className="text-offwhite px-4 md:px-8 max-w-4xl mx-auto space-y-4"
             >
             <div className="text-center space-y-4">

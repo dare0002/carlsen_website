@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/HeroIndex";
 import Newsletter from "@/components/Newsletter";
+import StickyBar from "@/components/StickyBar";
 
 const OpenSansRegular = localFont({
   src: "./fonts/OpenSansCondensed-Regular.woff", 
@@ -46,11 +47,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body
-        className={`${OpenSansRegular.variable} ${OpenSansSemiBold.variable} ${OpenSansBold.variable} ${Poppins.variable} ${Lora.variable} antialiased`}
+        className={`${OpenSansRegular.variable} ${OpenSansSemiBold.variable} ${OpenSansBold.variable} ${Poppins.variable} ${Lora.variable} antialiased pt-12`}
       >
+        <StickyBar/>
         <Header/>
         <Hero/>
-        <main className="px-4 md:px-8 max-w-4xl mx-auto">
+        <main className=" px-4 md:px-8 max-w-4xl mx-auto">
           {children}
         </main>
         <Newsletter/>
