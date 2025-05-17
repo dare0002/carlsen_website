@@ -4,7 +4,7 @@ import Categories from "@/components/IndexCategories";
 export default function Home() {
   return (
     <div>
-      <main className="">
+      <main>
         <Categories/>
       </main>
     </div>

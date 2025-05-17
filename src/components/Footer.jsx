@@ -6,7 +6,7 @@ import { FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 bg-lightgreen text-green p-8 px-10 lg:px-40 gap-x-10 mt-10">
+        <footer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-8 bg-lightgreen text-green p-8 px-10 lg:px-40 gap-x-10">
             <div className="mx-auto md:mx-auto">
               <img src="/logo.svg" alt="logo" />
               <div>
