@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import Hero from "@/components/HeroIndex";
 import Newsletter from "@/components/Newsletter";
 import StickyBar from "@/components/StickyBar";
+import InstagramBoxes from "@/components/InstagramBoxes"
 
 const OpenSansRegular = localFont({
   src: "./fonts/OpenSansCondensed-Regular.woff", 
@@ -54,6 +55,7 @@ export default function RootLayout({ children }) {
         <Hero/>
         <main className=" px-4 md:px-8 max-w-4xl mx-auto">
           {children}
+          <InstagramBoxes />
         </main>
         <Newsletter/>
         <Footer/>
