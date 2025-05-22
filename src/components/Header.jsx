@@ -66,7 +66,7 @@ const Header = () => {
                             {["forskole", "indskoling", "mellemtrin", "udskoling"].map((level) => (
                             <li key={level}>
                                 <Link
-                                href={`/materiale/${level}`}
+                                href={`/Category/${level}`}
                                 className="block px-4 py-2 hover:bg-lightgreen transition duration-200 ease-in-out"
                                 >
                                 {level.charAt(0).toUpperCase() + level.slice(1)}
@@ -90,10 +90,10 @@ const Header = () => {
                         <button onClick={toggleDropdown}>Undervisningsmateriale</button>
                         {dropdownOpen && (
                             <ul className="mt-2 space-y-2 text-sm text-green">
-                                <li><Link href="/materiale/forskole" className="block px-4 py-2 hover:bg-lightgreen">Førskole</Link></li>
-                                <li><Link href="/materiale/indskoling" className="block px-4 py-2 hover:bg-lightgreen">Indskoling</Link></li>
-                                <li><Link href="/materiale/mellemtrin" className="block px-4 py-2 hover:bg-lightgreen">Mellemtrin</Link></li>
-                                <li><Link href="/materiale/udskoling" className="block px-4 py-2 hover:bg-lightgreen">Udskoling</Link></li>
+                                <li><Link href="/Category/forskole" className="block px-4 py-2 hover:bg-lightgreen">Førskole</Link></li>
+                                <li><Link href="/Category/indskoling" className="block px-4 py-2 hover:bg-lightgreen">Indskoling</Link></li>
+                                <li><Link href="/Category/mellemtrin" className="block px-4 py-2 hover:bg-lightgreen">Mellemtrin</Link></li>
+                                <li><Link href="/Category/udskoling" className="block px-4 py-2 hover:bg-lightgreen">Udskoling</Link></li>
                             </ul>
                         )}
                     </li>

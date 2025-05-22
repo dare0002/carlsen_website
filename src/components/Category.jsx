@@ -15,7 +15,7 @@ const Category = ({ text, bgColor }) => {
         shadow-md
         transition-all duration-300
         transform hover:scale-105
-        cursor pointer
+        cursor-pointer
         `}
         >
             <span className="text-lg md:text-xl font-semibold">{text}</span>

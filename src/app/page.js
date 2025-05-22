@@ -1,14 +1,15 @@
-import Image from "next/image";
 import Categories from "@/components/IndexCategories";
 import IndexAbout from "@/components/IndexAbout";
+import Hero from "@/components/HeroIndex";
 
 export default function Home() {
   return (
-    <div>
-      <main>
+    <>
+      <Hero/>
+      <main className=" px-4 md:px-8 max-w-4xl mx-auto">
         <Categories/>
         <IndexAbout/>
       </main>
-    </div>
+    </>
   );
 }

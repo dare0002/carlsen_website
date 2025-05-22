@@ -5,6 +5,12 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    'bg-pink',
+    'bg-orange',
+    'bg-green',
+    'bg-lightblue',
+  ],
   theme: {
     extend: {
       colors: {
@@ -18,6 +24,15 @@ module.exports = {
         orange: "#FFB656",
         lightblue: "#A4CBF3",
       }, 
+      safelist: [
+    'bg-pink',
+    'bg-orange',
+    'bg-green',
+    'bg-lightblue',
+    // osv
+  ],
+
+   
       
       fontSize: {
         'base': 'clamp(0.875rem, 0.788rem + 0.4348vw, 1.125rem)',
