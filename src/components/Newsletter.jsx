@@ -21,8 +21,8 @@ function Newsletter () {
         <form action={formAction} noValidate  className="text-offwhite px-4 md:px-8 max-w-4xl mx-auto space-y-4"
             >
             <div className="text-center space-y-4">
-                <h2 className="text-lg md:text-xl font-bold mb-2">Tilmeld dig vores nyhedsbreve!</h2>
-                <p>Få inspiration til din undervisning - gratis materialer & populære top-ressourcer direkte i din inbox.</p>
+                <h2 className="text-lg md:text-xl font-bold mb-2">Tilmeld dig vores nyhedsbrev!</h2>
+                <p>Få inspiration til din undervisning - gratis materialer & populære top-ressourcer direkte i din inboks.</p>
                     <div>
                         <button type="button" onClick={()=> setShowForm(!showForm)}
                         className="bg-lightgreen text-green font-semibold px-4 py-2 rounded hover:bg-offwhite transition"

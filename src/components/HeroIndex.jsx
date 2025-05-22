@@ -13,7 +13,7 @@ const Hero = () => {
     };
 
     return (
-        <div className="bg-lightgreen text-green w-full py-16 mb-8">
+        <div className="bg-lightgreen text-green w-full py-6 mb-8">
             <div className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-8 relative">
                 <motion.img
                     src="/sallysFarKids.svg"

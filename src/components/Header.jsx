@@ -9,6 +9,7 @@ const Header = () => {
 
     const [menuOpen, setMenuOpen ] = useState(false);
     const [dropdownOpen, setDropdownOpen] = useState(false);
+    const [dropdownMobileOpen, setDropdownMobileOpen] = useState(false);
     const dropdownRef = useRef(null);
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
@@ -44,11 +45,15 @@ const Header = () => {
                 </div>
 
                 <Link href="/" className="flex-shrink-0">
-                <img
-                src="/logo.svg"
-                alt="logo"
-                className="h-10 w-auto md:h-20 transition-all"
-                />
+                    <div className="relative w-16 h-16 md:w-20 md:h-20">
+                        <Image 
+                        src="/logo.svg" 
+                        alt="logo" 
+                        fill 
+                        className="object-contain"
+                        priority
+                        />
+                    </div>
                 </Link>
 
                 {/* Desktop menu */}
@@ -59,14 +64,18 @@ const Header = () => {
                                 onClick={toggleDropdown}
                                 className="flex items-center gap-1 hover:underline text-green transition duration-200 ease-in-out"
                             >
-                                Undervisningsmateriale <FiChevronDown className={`text-sm text-green transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
+                                Undervisningsmateriale{" "} <FiChevronDown className={`text-sm text-green transition-transform duration-200 ${dropdownOpen ? 'rotate-180' : ''}`} />
                             </button>
                         {dropdownOpen && (
                         <ul className="absolute top-full mt-2 left-0 bg-offwhite shadow-md rounded min-w-[180px] z-50 overflow-hidden">
-                            {["forskole", "indskoling", "mellemtrin", "udskoling"].map((level) => (
+                            {[
+                                "førskole", 
+                                "indskoling", 
+                                "mellemtrin", 
+                                "udskoling"].map((level) => (
                             <li key={level}>
                                 <Link
-                                href={`/Category/${level}`}
+                                href={{ pathname: `/Category/${level}`, query: { grade: level } }}
                                 className="block px-4 py-2 hover:bg-lightgreen transition duration-200 ease-in-out"
                                 >
                                 {level.charAt(0).toUpperCase() + level.slice(1)}
@@ -87,13 +96,32 @@ const Header = () => {
         {menuOpen && (
                 <ul className="md:hidden pb-10  mt-4 space-y-4 text-green font-semibold text-lg text-center z-30">
                     <li>
-                        <button onClick={toggleDropdown}>Undervisningsmateriale</button>
-                        {dropdownOpen && (
+                        <button onClick={() => setDropdownMobileOpen(!dropdownMobileOpen)}
+                            className="flex items-center justify-center gap-1 w-full"
+                        >
+                            Undervisningsmateriale
+                            <FiChevronDown
+                                className={`text-green transition-transform duration-200 ${
+                                    dropdownMobileOpen ? "rotate-180" : ""
+                                }`}
+                            />
+                        </button>
+                        {dropdownMobileOpen && (
                             <ul className="mt-2 space-y-2 text-sm text-green">
-                                <li><Link href="/Category/forskole" className="block px-4 py-2 hover:bg-lightgreen">Førskole</Link></li>
-                                <li><Link href="/Category/indskoling" className="block px-4 py-2 hover:bg-lightgreen">Indskoling</Link></li>
-                                <li><Link href="/Category/mellemtrin" className="block px-4 py-2 hover:bg-lightgreen">Mellemtrin</Link></li>
-                                <li><Link href="/Category/udskoling" className="block px-4 py-2 hover:bg-lightgreen">Udskoling</Link></li>
+                                {["førskole", "indskoling", "mellemtrin", "udskoling"].map((level) => (
+                                    <li key={level}>
+                                    <Link
+                                        href={{ pathname: `/Category/${level}`, query: { grade: level } }}
+                                        onClick={() => {
+                                        setMenuOpen(false);
+                                        setDropdownMobileOpen(false);
+                                        }}
+                                        className="block px-4 py-2 hover:bg-lightgreen"
+                                    >
+                                        {level.charAt(0).toUpperCase() + level.slice(1)}
+                                    </Link>
+                                    </li>
+                                ))}
                             </ul>
                         )}
                     </li>
