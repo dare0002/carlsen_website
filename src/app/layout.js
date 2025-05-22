@@ -52,11 +52,8 @@ export default function RootLayout({ children }) {
       >
         <StickyBar/>
         <Header/>
-        <Hero/>
-        <main className=" px-4 md:px-8 max-w-4xl mx-auto">
           {children}
           <InstagramBoxes />
-        </main>
         <Newsletter/>
         <Footer/>
       </body>
