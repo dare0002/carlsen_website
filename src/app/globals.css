@@ -42,6 +42,13 @@
   src: url("fonts/Lora-Italic.woff");
 }
 
+@font-face {
+  font-family: "Updock Regular";
+  font-style: normal;
+  font-weight: 600;
+  src: url("fonts/Updock-Regular.woff");
+}
+
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -68,6 +75,11 @@ h2 {
 
 h3 {
   font-family: "Open Sans Condensed", sans-serif;
+  font-weight: 600;
+}
+
+h4 {
+  font-family: "Updock", serif;
   font-weight: 600;
 }
 

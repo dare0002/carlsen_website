@@ -3,7 +3,6 @@ import Head from "next/head";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Hero from "@/components/HeroIndex";
 import Newsletter from "@/components/Newsletter";
 import StickyBar from "@/components/StickyBar";
 import InstagramBoxes from "@/components/InstagramBoxes"
@@ -38,6 +37,11 @@ const Lora = localFont({
   weight: "400"
 })
 
+const Updock = localFont({
+  src: "./fonts/Updock-Regular.woff", 
+  variable: "--font-updock-regular", 
+  weight: "600"
+})
 
 export const metadata = {
   title: "Carlsen Ekstra",
