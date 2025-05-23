@@ -1,5 +1,5 @@
 
-const Card = ({ data }) => {
+const Card = ({ data, onReadMore }) => {
     const themesArray = Array.isArray(data.themes) ? data.themes : [];
     const gradeArray = Array.isArray(data.grade) ? data.grade : [];
 
@@ -18,7 +18,9 @@ const Card = ({ data }) => {
                 <h3 className="font-semibold text-sm">{capitalizedGrades.join(" og ")}</h3>
                 <h2 className="font-semibold text-lg">{data.type}</h2>
                 <h2 className="italic">{data.title} af {data.author}</h2>
-                <button className="underline text-green transition duration-200 ease-in-out font-bold hover:text-green-800">Læs mere</button>
+                <button 
+                onClick={onReadMore}
+                className="underline text-green transition duration-200 ease-in-out font-bold hover:text-green-800">Læs mere</button>
             </div>
              <div className="col-span-1 md:col-span-2 border-t border-green my-2" />
             <div className="">
