@@ -39,9 +39,6 @@ const Hero = () => {
               animate={{ x: 0, opacity: 1 }}
               transition={{ duration: 1.5, ease: "easeInOut", delay: 0.5 }}
             />
-          </>
-        )}
-
         <div className="flex flex-col items-center text-center z-10 relative">
           <h1 className="text-4xl md:text-8xl font-bold mb-1">CARLSEN</h1>
           <h4 className="text-2xl md:text-3xl font-semibold">Ekstra</h4>
@@ -53,9 +50,6 @@ const Hero = () => {
           </p>
           <Button onClick={handleScroll}>Find materiale nu</Button>
         </div>
-
-        {showContent && (
-          <>
             <motion.img
               src="/girlDog.svg"
               alt="Pige med en hund illustration"
@@ -72,8 +66,8 @@ const Hero = () => {
               animate={{ x: 300, opacity: 1 }}
               transition={{ duration: 1, ease: "easeOut", delay: 1.1 }}
             />
-          </>
-        )}
+             </>
+            )}
       </div>
     </div>
   );
