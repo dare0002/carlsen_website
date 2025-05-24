@@ -6,14 +6,13 @@ import { actionSubmit } from "@/utils/actions";
 import NewsletterSubmitButton from "@/components/NewsletterSubmitBtn"
 
 function Newsletter () {
-    // const [state, formAction] = useActionState(actionSubmit);
     const [state, formAction] = useActionState(actionSubmit, {
-  name: "",
-  email: "",
-  success: false,
-  errors: {},
-  message: "",
-});
+        name: "",
+        email: "",
+        success: false,
+        errors: {},
+        message: "",
+    });
     const [showForm, setShowForm] = useState(false);
 
     return (
@@ -31,7 +30,6 @@ function Newsletter () {
                         </button>
                     </div>
             </div>
-            {/* Formularen vises kun hvis button er blevet klikket*/}
             {showForm && (
                 <div className="space-y-6">
                     <div className="mb-4 max-w-md mx-auto">
@@ -65,7 +63,7 @@ function Newsletter () {
                     <div className="text-center">
                         <NewsletterSubmitButton/>
                     </div>
-                    {state?.message && <p className="pt-2">{state.message}</p>}
+                    {state?.message && <p className="pt-2 text-center">{state.message}</p>}
                 </div>
             )}
         </form>
