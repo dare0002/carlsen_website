@@ -2,7 +2,8 @@
 
 import Card from "./components/Card";
 import Modal from "./components/Modal";
-import { useState, useEffect, use } from "react"; 
+import FilterMenu from "./components/FilterMenu";
+import { useState, useEffect } from "react"; 
 import { useSearchParams } from "next/navigation";
 import { getMaterials } from "@/lib/apiCards";
 import { gradeStyles } from "@/lib/gradeStyles";
@@ -13,20 +14,40 @@ const Materials = () => {
     const grade = searchParams.get("grade");
     const [materials, setMaterials]= useState([]);
     const [loading, setLoading]= useState(true);
-
     const [selectedMaterial, setSelectedMaterial] = useState(null);
 
-    useEffect(() => {
-        if(!grade) return;
+    // side menu, filtrering!
 
-        async function fetchData(){
-            try{
-                const allMaterials = await getMaterials();
-                const filtered = allMaterials.filter((mat)=>
-                    mat.grade.includes(grade)
-                );
-                setMaterials(filtered);
-            } catch (error){
+    const [allMaterials, setAllMaterials] = useState([]);
+    const [durationFilter, setDurationFilter] = useState([]);
+    const [typeFilter, setTypeFilter] = useState([]);
+
+    const applyFilters = () => {
+        let filtered = allMaterials;
+
+        if (durationFilter.length > 0) {
+            filtered = filtered.filter(mat =>
+                durationFilter.some(([min, max]) => mat.forberedelsestid >= min && mat.forberedelsestid <= max));
+        }
+
+        if (typeFilter.length > 0){
+            filtered= filtered.filter(mat => typeFilter.includes(mat.type));
+        }
+
+        filtered = filtered.filter(mat => mat.grade.includes(grade));
+        setMaterials(filtered);
+    };
+
+    useEffect(() => {
+        if (!grade) return;
+
+        async function fetchData() {
+            try {
+                const fetchedMaterials = await getMaterials();
+                const byGrade = fetchedMaterials.filter(mat => mat.grade.includes(grade));
+                setAllMaterials(byGrade);
+                setMaterials(byGrade);
+            } catch (error) {
                 console.error(error);
             } finally {
                 setLoading(false);
@@ -36,6 +57,30 @@ const Materials = () => {
         fetchData();
     }, [grade]);
 
+    // useEffect(() => {
+    //     if(!grade) return;
+
+    //     async function fetchData(){
+    //         try{
+    //             const allMaterials = await getMaterials();
+    //             const filtered = allMaterials.filter((mat)=>
+    //                 mat.grade.includes(grade)
+    //             );
+    //             setMaterials(filtered);
+    //         } catch (error){
+    //             console.error(error);
+    //         } finally {
+    //             setLoading(false);
+    //         }
+    //     }
+
+    //     fetchData();
+    // }, [grade]);
+
+    useEffect(() => {
+        applyFilters();
+    }, [durationFilter, typeFilter]);
+
     const handleOpenModal = (material) => {
         setSelectedMaterial(material);
     };
@@ -44,8 +89,8 @@ const Materials = () => {
         setSelectedMaterial(null);
     };
 
-    if(loading) return <p>Loading...</p>;
-    if (materials.length===0) return <p>Intet materiale for "{grade}" blev fundet.</p>;
+    if(loading) return <p className="text-center">Loading...</p>;
+    if (materials.length===0) return <p className="text-center my-40 text-2xl">Intet materiale for "{grade}" blev fundet.</p>;
 
 
 
@@ -59,13 +104,23 @@ const Materials = () => {
                     <p className="text-sm md:text-base mt-2">{gradeStyles[grade].subtitle}</p>
                 )}
             </div>
-            <h2 className="text-lg md:text-xl font-bold text-center mb-8">Undervisningsmateriale</h2>
-            <div className="px-4 md:px-8 max-w-6xl mx-auto space-y-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <h2 className="text-lg md:text-xl font-bold text-center mb-8">Materiale</h2>
+
+            <div className="flex flex-col lg:flex-row w-full mx-auto px-4 md:px-8 gap-8">
+                <FilterMenu
+                    durationFilter={durationFilter}
+                    setDurationFilter={setDurationFilter}
+                    typeFilter={typeFilter}
+                    setTypeFilter={setTypeFilter}
+                />
+            <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
                 {materials.map((mat) => (
                 <Card key={mat.id} data={mat} onReadMore={()=> handleOpenModal(mat)}/>
 
             ))}
             </div>
+            </div>
+            
 
             {/* Modal starter */}
 
@@ -91,7 +146,6 @@ const Materials = () => {
                                     >
                                     Download materiale <LuDownload className="h-6 w-6" />
                                 </a>
-                                {/* <h3 className="flex items-center gap-4 text-lg font-semibold mt-4">Download materiale <LuDownload className="h-6 w-6 text-green"/></h3> */}
                             </div>
                         </div>
                         <div>
@@ -99,11 +153,7 @@ const Materials = () => {
                         </div>
                     </>
                 )}
-
             </Modal>
-
-
-
         </>
       );
 };
