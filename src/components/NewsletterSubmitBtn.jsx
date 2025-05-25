@@ -8,7 +8,7 @@ function NewsletterSubmitButton () {
         <button
         type="submit"
         disabled={pending}
-        className={`bg-lightgreen text-green font-semibold px-4 py-2 rounded hover:bg-offwhite transition ${pending ? "opacity-50 cursor-not-allowed": "" 
+        className={`bg-lightgreen text-green font-semibold text-base px-4 py-2 rounded hover:bg-offwhite transition ${pending ? "opacity-50 cursor-not-allowed": "" 
 
         }`}
         >

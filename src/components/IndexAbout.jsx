@@ -18,10 +18,10 @@ const IndexAbout = () => {
                 </div>
             </div>
             <div className="space-y-2 flex flex-col justify-center">
-                <h2 className="text-lg md:text-xl font-bold mb-2 mx-auto text-center">80 år med læseglæde</h2>
-                <p className="mx-auto text-center">I mere end 80 har Forlaget Carlsen været med til at skabe læseglæde hos børn og unge. Vi har altid barnet i fokus og vi ser det som vores fineste opgave at få flere børn og unge til at læse.</p>
+                <h2 className="text-lg md:text-xl font-bold mb-2  ">80 år med læseglæde</h2>
+                <p className="mx-auto text-base">I mere end 80 har Forlaget Carlsen været med til at skabe læseglæde hos børn og unge. Vi har altid barnet i fokus og vi ser det som vores fineste opgave at få flere børn og unge til at læse.</p>
                 <Link href="/About">
-                <Button className="mt-6 mx-auto flex items-center">Læs mere om os</Button>
+                <Button className="mt-6 ">Læs mere om os</Button>
                 </Link>
             </div>
             

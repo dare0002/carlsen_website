@@ -50,8 +50,8 @@ const Reviews = () => {
             <div className="max-w-2xl bg-lightgreen rounded-3xl px-10 py-10">
                 <div className="text-base text center space-y-4">
                     <RiDoubleQuotesL />
-                    <blockquote className="text-center">{text}</blockquote>
-                    <p className="text-center font-base">{name}</p>
+                    <blockquote className="text-center text-base">{text}</blockquote>
+                    <p className="text-center text-base">{name}</p>
                         <div className="flex justify-end">
                           <RiDoubleQuotesR />
                         </div>

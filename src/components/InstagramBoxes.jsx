@@ -17,7 +17,7 @@ const Instagram = () => {
     return (
         <section className="py-12 bg-offwhite">
             <div className="max-w-2xl md:max-w-3xl mx-auto px-4">
-                <h2 className="text-lg md:text-xl font-bold text-center mb-8">Følg os på Instagram</h2>
+                <h2 className="text-lg md:text-xl font-bold text-center mb-8">Følg os på Instagram @carlsenekstra</h2>
                 <div className="grid grid-cols-4 md:grid-cols-4 grid-rows-2 gap-2">
                     {images.map((src, index) => (
                         <Link

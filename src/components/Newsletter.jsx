@@ -21,10 +21,10 @@ function Newsletter () {
             >
             <div className="text-center space-y-4">
                 <h2 className="text-lg md:text-xl font-bold mb-2">Tilmeld dig vores nyhedsbrev!</h2>
-                <p>Få inspiration til din undervisning - gratis materialer & populære top-ressourcer direkte i din inboks.</p>
+                <p className="text-base">Få inspiration til din undervisning - gratis materialer & populære top-ressourcer direkte i din inboks.</p>
                     <div>
                         <button type="button" onClick={()=> setShowForm(!showForm)}
-                        className="bg-lightgreen text-green font-semibold px-4 py-2 rounded hover:bg-offwhite transition"
+                        className="bg-lightgreen text-green text-base font-semibold px-4 py-2 rounded hover:bg-offwhite transition"
                         >
                             {showForm ? "Luk" : "Tilmeld dig her"}
                         </button>
@@ -33,7 +33,7 @@ function Newsletter () {
             {showForm && (
                 <div className="space-y-6">
                     <div className="mb-4 max-w-md mx-auto">
-                        <label htmlFor="name" className="block font-bold mb-1">
+                        <label htmlFor="name" className="block font-bold mb-1 text-base">
                             Navn
                         </label>
                         <input
@@ -47,7 +47,7 @@ function Newsletter () {
                         {state?.errors?.name && <p className="text-red-200">{state.errors.name}</p>}
                     </div>
                     <div className="mb-4 max-w-md mx-auto">
-                        <label htmlFor="email" className="block font-bold mb-1">
+                        <label htmlFor="email" className="block font-bold mb-1 text-base">
                             Email
                         </label>
                         <input 

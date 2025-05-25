@@ -41,7 +41,7 @@ const Toplisten = () => {
         <main className="max-w-4xl mt-20 mx-auto">
             <div className="mb-16 text-center max-w-md mx-auto">
                 <h2 className="text-lg md:text-xl font-bold mb-2">Toplisten</h2>
-                <p>Se det undervisningsmateriale der hitter hos andre litteraturformidlere lige nu.</p>
+                <p className="text-base">Se det undervisningsmateriale der hitter hos andre litteraturformidlere lige nu.</p>
             </div>
             <div className="max-w-xl space-y-2 flex-col justify-center mx-auto">
             {materials.map((material) => (
@@ -62,12 +62,12 @@ const Toplisten = () => {
                             </div>
                             <div className="mt-2">
                                 <h2 className="text-lg md:text-xl font-bold mb-2">{selectedMaterial.type}</h2>
-                                <p className="mb-2"><strong>{selectedMaterial.title} </strong>af {selectedMaterial.author}</p>
-                                <p className="mb-4">Udarbejdet af {selectedMaterial.credit}</p>
-                                <p className="mb-4">{selectedMaterial.summary}</p>
-                                <p><strong>Bedst egnet til:</strong> {selectedMaterial.grade?.join(" og ")}</p>
-                                <p><strong>Forberedelsestid:</strong> {selectedMaterial.forberedelsestid} minutter</p>
-                                <p><strong>Temaer:</strong> {selectedMaterial.themes?.join(", ")}</p>
+                                <p className="mb-2 text-[0.95rem]"><strong>{selectedMaterial.title} </strong>af {selectedMaterial.author}</p>
+                                <p className="mb-4 text-[0.95rem]">Udarbejdet af {selectedMaterial.credit}</p>
+                                <p className="mb-4 text-[0.95rem]">{selectedMaterial.summary}</p>
+                                <p className="text-[0.95rem]"><strong>Bedst egnet til:</strong> {selectedMaterial.grade?.join(" og ")}</p>
+                                <p className="text-[0.95rem]"><strong>Forberedelsestid:</strong> {selectedMaterial.forberedelsestid} minutter</p>
+                                <p className="text-[0.95rem]"><strong>Temaer:</strong> {selectedMaterial.themes?.join(", ")}</p>
                                 <a
                                     href="/dummyfile.pdf"
                                     download
@@ -78,7 +78,7 @@ const Toplisten = () => {
                             </div>
                         </div>
                         <div>
-                            <p className="italic text-center mt-8">Alt materiale på Carlsen Ekstra´s hjemmeside er gratis</p>
+                            <p className="italic text-center mt-8 text-[0.95rem]">Alt materiale på Carlsen Ekstra´s hjemmeside er gratis</p>
                         </div>
                     </>
                 )}

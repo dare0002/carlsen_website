@@ -1,7 +1,3 @@
-import Image from "next/image";
-
-//importere billede, brug props
-
 const Category = ({ text, bgColor }) => {
     return (
         <div className={`
@@ -18,7 +14,7 @@ const Category = ({ text, bgColor }) => {
         cursor-pointer
         `}
         >
-            <span className="text-lg md:text-xl font-semibold">{text}</span>
+            <span className="text-lg md:text-2xl font-semibold">{text}</span>
         </div>
       );
 };
