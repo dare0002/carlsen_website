@@ -27,7 +27,7 @@ const Filtermenu = ({ durationFilter, setDurationFilter, typeFilter, setTypeFilt
     };
 
     return (
-        <aside className="sticky top-44 w-full lg:w-1/5 xl:w-1/6 space-y-4 p-4 border rounded shadow-sm bg-white max-h-[300px] overflow-y-auto">
+        <aside className="lg:sticky top-44 w-full lg:w-1/5 xl:w-1/6 space-y-4 p-4 border rounded shadow-sm bg-white max-h-[300px] overflow-y-auto">
             <div className="flex flex-col sm:flex-row lg:flex-col sm:gap-8 lg:gap-2">
                 <div className="flex-1">
             <h3 className="font-bold mb-2">Filtrere efter tidsestimering</h3>
