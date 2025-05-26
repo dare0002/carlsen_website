@@ -27,8 +27,10 @@ const Hero = () => {
               src="/sallysFarKids.svg"
               alt="Sallys far og to børn illustration"
               className="w-54 scale-125 max-h-[400px] hidden md:block object-contain mx-auto z-0"
-              initial={{ x: "-100%", opacity: 1 }}
-              animate={{ x: "40%", opacity: 0 }}
+              initial={{ x: "0", opacity: 1 }}
+              // initial={{ x: "-100%", opacity: 1 }}
+               animate={{ x: "140%", opacity: 0 }}
+              // animate={{ x: "40%", opacity: 0 }}
               transition={{ duration: 1.1, ease: "easeOut" }}
             />
             <motion.img
