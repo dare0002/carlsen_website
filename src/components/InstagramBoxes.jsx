@@ -3,14 +3,14 @@ import { FaInstagram } from "react-icons/fa";
 import Link from "next/link";
 
 const images = [
-    "/insta1.jpg",
-    "/insta2.jpg", 
-    "/insta3.jpg", 
-    "/insta4.jpg", 
-    "/insta5.jpg", 
-    "/insta6.jpg", 
-    "/insta7.jpg", 
-    "/insta8.jpg",
+    "/insta1.webp",
+    "/insta2.webp", 
+    "/insta3.webp", 
+    "/insta4.webp", 
+    "/insta5.webp", 
+    "/insta6.webp", 
+    "/insta7.webp", 
+    "/insta8.webp",
 ];
 
 const Instagram = () => {

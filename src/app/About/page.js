@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import Link from "next/link";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -10,7 +11,12 @@ const About = () => {
         <p className="text-base">Carlsen er en del af Egmont via Lindhart og Ringhof, som også rummer L&G Uddannelse - et af Danmarks førende læringshuse med Alina, Go Tutor, Praxis, Forstå og max is.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 mb-16 text-center">
-        <img src="/about.png" alt="Bøger" className="w-54 max-h-[300px] object-contain mx-auto z-0 " />
+        <Image 
+        src="/about.webp" 
+        alt="Bøger" 
+        width={400} 
+        height={400} 
+        className=" object-contain mx-auto z-0 " />
         <div className="flex items-center">
           <p className="text-base">Siden 2012 har Carlsen Ekstra leveret gratis undervisningsmateriale til danske litteraturformidlere. Materialet er udviklet af undervisere, bibliotekarer og andre litteraturformidlere. </p>
         </div>
