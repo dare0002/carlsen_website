@@ -26,7 +26,8 @@ const Hero = () => {
         </div>
         <div className="flex flex-col items-center text-center z-10 relative">
           <h1 className="text-4xl md:text-8xl font-bold mb-1">CARLSEN</h1>
-          <h5 className="text-2xl md:text-3xl font-semibold">Ekstra</h5>
+          <p className="text-2xl md:text-3xl font-semibold font-updock">Ekstra</p>
+          {/* <h5 className="text-2xl md:text-3xl font-semibold">Ekstra</h5> */}
           <p className="text-base md:text-lg font-semibold space-y-2">
             Gratis undervisningsmateriale
           </p>

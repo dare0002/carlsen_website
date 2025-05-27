@@ -12,7 +12,6 @@ const IndexAbout = () => {
                     alt="Cirkel med bog"
                     fill
                     style={{ objectFit: "contain" }}
-                    
                     className="absolute top-4 left-4"
                     />
                 </div>

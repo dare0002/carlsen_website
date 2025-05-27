@@ -1,9 +1,6 @@
 
 "use server";
 
-//funktioner der køres på server siden og ikke client site som svar på t.eks formular
-//Bruger funktionerne fra api.js og hanterer validering og eventuel feedback
-
 import {getData, postData} from "@/lib/api";
 import { revalidatePath } from "next/cache";
 
@@ -29,7 +26,6 @@ export async function actionSubmit(prevState, formData) {
     }
 
     try{
-    //henter tidligere signups fra databasen via getData
     const result = await getData();
     const signups = result.data || [];
 

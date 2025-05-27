@@ -26,6 +26,10 @@ module.exports = {
         lightblue: "#A4CBF3",
       }, 
 
+      fontFamily: {
+        updock: ['var(--font-updock)'], 
+      },
+
       safelist: [
       'bg-pink',
       'bg-orange',

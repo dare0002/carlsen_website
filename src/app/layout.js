@@ -39,7 +39,7 @@ const Lora = localFont({
 
 const Updock = localFont({
   src: "./fonts/Updock-Regular.woff", 
-  variable: "--font-updock-regular", 
+  variable: "--font-updock", 
   weight: "600"
 })
 
@@ -52,7 +52,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="da">
       <body
-        className={`${OpenSansRegular.variable} ${OpenSansSemiBold.variable} ${OpenSansBold.variable} ${Poppins.variable} ${Lora.variable} antialiased pt-12`}
+        className={`${OpenSansRegular.variable} ${OpenSansSemiBold.variable} ${OpenSansBold.variable} ${Poppins.variable} ${Lora.variable} ${Updock.variable} antialiased pt-12`}
       >
         <StickyBar/>
         <Header/>

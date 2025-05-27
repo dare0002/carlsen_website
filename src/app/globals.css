@@ -12,6 +12,7 @@
   font-style: normal;
   font-weight: normal;
   src: url("fonts/OpenSansCondensed-Regular.woff");
+  font-display: swap,
 }
 
 @font-face {
@@ -19,6 +20,7 @@
   font-style: normal;
   font-weight: bold;
   src: url("fonts/OpenSansCondensed-Bold.woff");
+  font-display: swap,
 }
 
 @font-face {
@@ -26,6 +28,7 @@
   font-style: normal;
   font-weight: 600;
   src: url("fonts/OpenSansCondensed-SemiBold.woff");
+  font-display: swap,
 }
 
 @font-face {
@@ -33,6 +36,7 @@
   font-style: normal;
   font-weight: 700;
   src: url("fonts/Poppins-Bold.woff");
+  font-display: swap,
 }
 
 @font-face {
@@ -40,22 +44,16 @@
   font-style: italic;
   font-weight: 400;
   src: url("fonts/Lora-Italic.woff");
+  font-display: swap,
 }
 
 @font-face {
-  font-family: "Updock Regular";
+  font-family: "Updock";
   font-style: normal;
   font-weight: 600;
   src: url("fonts/Updock-Regular.woff");
+  font-display: swap,
 }
-
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
 
 body {
   background: var(--background);
@@ -83,10 +81,10 @@ h4 {
   font-weight: 400;
 }
 
-h5 {
+/* h5 {
   font-family: "Updock", serif;
   font-weight: 600;
-}
+} */
 
 p {
   font-family: "Open Sans Condensed", sans-serif;

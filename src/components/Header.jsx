@@ -46,11 +46,16 @@ const Header = () => {
 
           <ul className="hidden md:flex space-x-8 text-green font-semibold text-base md:text-base lg:text-base items-center relative">
             <li className="relative" ref={dropdownRef}>
-              <button onClick={toggleDropdown} className="flex items-center gap-1 hover:underline text-green transition duration-200 ease-in-out">
+              <button onClick={toggleDropdown} 
+                      aria-expanded={dropdownOpen}
+                      aria-controls="desktop-dropdown"
+              className="flex items-center gap-1 hover:underline text-green transition duration-200 ease-in-out">
                 Undervisningsmateriale <FiChevronDown className={`text-sm text-green transition-transform duration-200 ${dropdownOpen ? "rotate-180" : ""}`} />
               </button>
               {dropdownOpen && (
-                <ul className="absolute top-full mt-2 left-0 bg-offwhite shadow-md rounded min-w-[180px] z-50 overflow-hidden text-[0.95rem]">
+                <ul 
+                id="desktop-dropdown"
+                className="absolute top-full mt-2 left-0 bg-offwhite shadow-md rounded min-w-[180px] z-50 overflow-hidden text-[0.95rem]">
                   {["førskole", "indskoling", "mellemtrin", "udskoling"].map((level) => (
                     <li key={level}>
                       <Link href={{ pathname: `/Category/${level}`, query: { grade: level } }} className="block px-4 py-2 hover:bg-lightgreen transition duration-200 ease-in-out">
@@ -84,12 +89,15 @@ const Header = () => {
       {menuOpen && (
         <ul className="md:hidden pb-10  mt-4 space-y-4 text-green font-semibold text-lg text-center z-30">
           <li>
-            <button onClick={() => setDropdownMobileOpen(!dropdownMobileOpen)} className="flex items-center justify-center gap-1 w-full">
+            <button onClick={() => setDropdownMobileOpen(!dropdownMobileOpen)}
+                    aria-expanded={dropdownMobileOpen}
+                    aria-controls="mobile-dropdown"
+                    className="flex items-center justify-center gap-1 w-full">
               Undervisningsmateriale
               <FiChevronDown className={`text-green transition-transform duration-200 ${dropdownMobileOpen ? "rotate-180" : ""}`} />
             </button>
             {dropdownMobileOpen && (
-              <ul className="mt-2 space-y-2 text-sm text-green">
+              <ul id="mobile-dropdown" className="mt-2 space-y-2 text-sm text-green">
                 {["førskole", "indskoling", "mellemtrin", "udskoling"].map((level) => (
                   <li key={level}>
                     <Link
