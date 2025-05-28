@@ -9,7 +9,7 @@ const Card = ({ data, onReadMore }) => {
     const capitalizedGrades = gradeArray.map(capitalize);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border p-4 rounded shadow-sm bg-white min-h-[300px]" onClick={onReadMore}>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 border p-4 rounded shadow-sm bg-white min-h-[300px] cursor-pointer" onClick={onReadMore}>
             <img 
             src={data.img} 
             alt={data.title} 

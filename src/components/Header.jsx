@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="sticky top-12 z-40 bg-offwhite">
+      <nav className="sticky top-20 z-20 md:static md:z-0 bg-offwhite">
         <div className="max-w-4xl mx-auto flex items-center justify-between px-4 py-5">
           {/* Burgermenu starter */}
           <div className="md:hidden">
@@ -87,7 +87,7 @@ const Header = () => {
         {/* Mobil menu */}
       </nav>
       {menuOpen && (
-        <ul className="md:hidden pb-10  mt-4 space-y-4 text-green font-semibold text-lg text-center z-30">
+        <ul className="md:hidden pb-10  mt-4 space-y-4 text-green font-semibold text-lg text-center z-30 relative">
           <li>
             <button onClick={() => setDropdownMobileOpen(!dropdownMobileOpen)}
                     aria-expanded={dropdownMobileOpen}

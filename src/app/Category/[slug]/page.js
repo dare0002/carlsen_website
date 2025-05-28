@@ -57,26 +57,6 @@ const Materials = () => {
         fetchData();
     }, [grade]);
 
-    // useEffect(() => {
-    //     if(!grade) return;
-
-    //     async function fetchData(){
-    //         try{
-    //             const allMaterials = await getMaterials();
-    //             const filtered = allMaterials.filter((mat)=>
-    //                 mat.grade.includes(grade)
-    //             );
-    //             setMaterials(filtered);
-    //         } catch (error){
-    //             console.error(error);
-    //         } finally {
-    //             setLoading(false);
-    //         }
-    //     }
-
-    //     fetchData();
-    // }, [grade]);
-
     useEffect(() => {
         applyFilters();
     }, [durationFilter, typeFilter]);
